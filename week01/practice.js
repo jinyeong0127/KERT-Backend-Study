@@ -107,3 +107,5 @@ check('renderPostList: 글 2개', () => renderPostList(makePosts().slice(0, 2)),
 check('renderPostList: 빈 배열', () => renderPostList([]), '<p>글이 없습니다</p>');
 
 console.log(`\n${passed} / ${total} 통과`);
+
+module.exports = { renderPostList };
