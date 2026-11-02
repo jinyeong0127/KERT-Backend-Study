@@ -14,8 +14,12 @@ KERT-Backend-Study/
 │   ├── ASSIGNMENT.md            ← 1주차 과제 안내
 │   ├── README.md
 │   └── practice.js              ← 연습 문제 (채점 코드 포함)
-└── week02/
-    ├── ASSIGNMENT.md            ← 2주차 과제 안내
+├── week02/
+│   ├── ASSIGNMENT.md            ← 2주차 과제 안내
+│   ├── README.md
+│   └── check.js                 ← 점검 코드 (서버를 켠 상태에서 실행)
+└── week03/
+    ├── ASSIGNMENT.md            ← 3주차 과제 안내
     ├── README.md
     └── check.js                 ← 점검 코드 (서버를 켠 상태에서 실행)
 ```
@@ -137,3 +141,4 @@ git pull
 |---|---|---|---|
 | 1주차 | [week01](./week01/ASSIGNMENT.md) | 개발 환경, JavaScript, 첫 Express 서버 | 10/9(금) 23:59 |
 | 2주차 | [week02](./week02/ASSIGNMENT.md) | EJS 템플릿과 폼으로 게시판 만들기 | 10/16(금) 23:59 |
+| 3주차 | [week03](./week03/ASSIGNMENT.md) | 데이터베이스, 로그인, 권한 | 11/13(금) 23:59 |
