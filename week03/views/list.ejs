@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>게시판 목록</title>
+</head>
+<body>
+  <h2>게시판 목록</h2>
+
+  <% if (user) { %>
+    <p>환영합니다, <strong><%= user.username %></strong>님! (<a href="/logout">로그아웃</a>)</p>
+    <% if (user.role === 'admin') { %>
+      <p><a href="/admin">관리자 페이지</a></p>
+    <% } %>
+    <p><a href="/posts/new">새 글 쓰기</a></p>
+  <% } else { %>
+    <p><a href="/login">로그인</a> | <a href="/signup">회원가입</a></p>
+  <% } %>
+
+  <hr>
+
+  <ul>
+    <% if (posts.length === 0) { %>
+      <p>작성된 글이 없습니다.</p>
+    <% } else { %>
+      <% posts.forEach(post => { %>
+        <li>
+          <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+          <p><%= post.content %></p>
+          <small>작성자: <%= post.username %></small>
+          <hr>
+        </li>
+      <% }) %>
+    <% } %>
+  </ul>
+</body>
+</html>

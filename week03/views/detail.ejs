@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title><%= post.title %></title>
+</head>
+<body>
+  <h2><%= post.title %></h2>
+  <p><small>작성자: <%= post.username %></small></p>
+  <hr>
+  <p><%= post.content %></p>
+  <hr>
+
+  <% if (user && (user.id === post.user_id || user.role === 'admin')) { %>
+    <p>
+      <% if (user.id === post.user_id) { %>
+        <a href="/posts/<%= post.id %>/edit"><button>수정</button></a>
+      <% } %>
+      <form action="/posts/<%= post.id %>/delete" method="POST" style="display:inline;">
+        <button type="submit" onclick="return confirm('정말 삭제하시겠습니까?');">삭제</button>
+      </form>
+    </p>
+  <% } %>
+
+  <hr>
+  <h3>댓글</h3>
+  <% if (user) { %>
+    <form method="POST" action="/posts/<%= post.id %>/comments">
+      <p><textarea name="content" placeholder="댓글을 입력하세요" required></textarea></p>
+      <button type="submit">댓글 등록</button>
+    </form>
+  <% } else { %>
+    <p><a href="/login">로그인</a>하면 댓글을 작성할 수 있습니다.</p>
+  <% } %>
+
+  <ul>
+    <% comments.forEach(comment => { %>
+      <li>
+        <p><%= comment.content %></p>
+        <small>작성자: <%= comment.username %></small>
+      </li>
+    <% }) %>
+  </ul>
+  
+  <p><a href="/posts">목록으로 돌아가기</a></p>
+</body>
+</html>

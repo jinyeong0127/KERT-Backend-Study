@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>관리자 페이지</title>
+</head>
+<body>
+  <h2>관리자 페이지 - 회원 목록</h2>
+  <ul>
+    <% users.forEach(u => { %>
+      <li>ID: <%= u.id %> | 아이디: <%= u.username %> | 권한: <%= u.role %></li>
+    <% }) %>
+  </ul>
+  <p><a href="/posts">게시판 목록으로 돌아가기</a></p>
+</body>
+</html>

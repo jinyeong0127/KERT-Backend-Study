@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>글 수정</title>
+</head>
+<body>
+  <h2>글 수정</h2>
+  
+  <form method="POST" action="/posts/<%= post.id %>/edit">
+    <p><input name="title" value="<%= post.title %>" required></p>
+    <p><textarea name="content" required><%= post.content %></textarea></p>
+    <button>수정 완료</button>
+  </form>
+
+  <p><a href="/posts/<%= post.id %>">취소</a></p>
+</body>
+</html>

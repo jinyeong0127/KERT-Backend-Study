@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>글쓰기</title>
+</head>
+<body>
+  <h2>글쓰기</h2>
+  
+  <form method="POST" action="/posts">
+    <p><input name="title" placeholder="제목" required></p>
+    <p><textarea name="content" placeholder="내용" required></textarea></p>
+    <button>등록</button>
+  </form>
+
+  <p><a href="/posts">글 목록으로 돌아가기</a></p>
+</body>
+</html>
